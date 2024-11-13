@@ -24,3 +24,13 @@ def fecha(request):
     </html>
     """ % fechaHoy
     return HttpResponse(texto2)
+
+def calcEdad(request, edadActual, year):
+    #edadActual=48
+    periodo=year-2024
+    edadFutura=edadActual+periodo
+    texto3="""
+    <html><body><h2>En el año %s tendrás %s años.
+    </h2></body></html>""" %(year, edadFutura)
+
+    return HttpResponse(texto3)
